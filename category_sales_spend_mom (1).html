@@ -1,0 +1,108 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Category Sales & Spend — MoM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07090d;--card:#0e131b;--line:#1c2533;--mut:#7c8aa0;--txt:#e8edf4;
+--cyan:#22d3ee;--lime:#a3e635;--gold:#fbbf24;--red:#f87171;--teal:#2dd4bf;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:'DM Sans',sans-serif;
+padding:26px 30px 30px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1240px;margin:0 auto}
+.head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:18px;flex-wrap:wrap;gap:10px}
+h1{font-size:21px;font-weight:700;letter-spacing:-.3px}
+.sub{color:var(--mut);font-size:12.5px;margin-top:3px}
+.legend{font-size:11px;color:var(--mut);display:flex;gap:14px;align-items:center}
+.legend b{color:var(--cyan);font-weight:600} .legend .g{color:var(--gold);font-weight:600}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 16px}
+.kl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px}
+.kv{font-family:'JetBrains Mono',monospace;font-size:25px;font-weight:700;margin-top:5px;color:var(--cyan)}
+.kpi:nth-child(2) .kv{color:var(--gold)} .kpi:nth-child(3) .kv{color:var(--lime)}
+.kpi:nth-child(4) .kv{color:var(--teal)}
+.ks{font-size:11px;color:var(--mut);margin-top:3px}
+.controls{display:flex;align-items:center;gap:8px;margin-bottom:12px;flex-wrap:wrap}
+.controls .lbl{font-size:11px;color:var(--mut);text-transform:uppercase;letter-spacing:.6px;margin-right:2px}
+.btn{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;color:var(--mut);
+background:var(--card);border:1px solid var(--line);border-radius:8px;padding:7px 13px;cursor:pointer;
+transition:.15s}
+.btn:hover{color:var(--txt);border-color:#2c3a4f}
+.btn.on{color:#07090d;background:var(--cyan);border-color:var(--cyan)}
+.btn.on.sp{background:var(--gold);border-color:var(--gold)}
+table{width:100%;border-collapse:collapse;background:var(--card);
+border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{padding:7px 9px;text-align:right;font-size:12px;border-bottom:1px solid var(--line)}
+thead th{background:#10161f;color:var(--mut);font-weight:600;font-size:11px;
+text-transform:uppercase;letter-spacing:.5px}
+th:first-child,td.cat{text-align:left}
+td.cat{font-weight:600;color:var(--txt);font-size:12.5px;white-space:nowrap}
+.sale{font-family:'JetBrains Mono',monospace;font-weight:600;font-size:12.5px;color:var(--txt)}
+.sp{font-family:'JetBrains Mono',monospace;font-size:10.5px;color:var(--gold);opacity:.85;margin-top:1px}
+td.tot{border-left:1px solid var(--line);background:rgba(45,212,191,.05)}
+td.tot .sale{color:var(--teal)}
+td.trend{text-align:center;padding:4px 6px}
+.part{color:var(--red);font-size:9px;font-weight:600}
+tbody tr:hover{background:rgba(255,255,255,.02)}
+tr.grand td{border-top:2px solid var(--cyan);border-bottom:none;background:#0c1118}
+tr.grand .cat{color:var(--cyan);font-weight:700;letter-spacing:.5px}
+tr.grand .sale{font-size:13px;color:var(--cyan)}
+.rank{display:inline-block;width:18px;color:var(--mut);font-family:'JetBrains Mono',monospace;font-size:10px;margin-right:6px}
+.foot{color:var(--mut);font-size:11px;margin-top:12px;line-height:1.6}
+.foot b{color:#aeb9cc;font-weight:600}
+</style></head><body><div class="wrap">
+<div class="head">
+ <div><h1>Category Sales &amp; Spend — Month on Month</h1>
+ <div class="sub">SmartSign · Jan 1 – Jun 20, 2026</div></div>
+ <div class="legend"><span>Each cell: <b>Total Sales</b> / <span class="g">Ad Spend</span></span>
+ <span>cell glow = sales size</span></div>
+</div>
+<div class="kpis"><div class="kpi"><div class="kl">Total Sales</div><div class="kv">$13.57M</div><div class="ks">Jan – Jun 20, 2026</div></div><div class="kpi"><div class="kl">Ad Spend</div><div class="kv">$2.07M</div><div class="ks">all categories</div></div><div class="kpi"><div class="kl">Blended ACOS</div><div class="kv">15.3%</div><div class="ks">spend ÷ total sales</div></div><div class="kpi"><div class="kl">Categories</div><div class="kv">31</div><div class="ks">active in period</div></div></div>
+<div class="controls"><span class="lbl">Sort</span>
+ <button class="btn on" data-k="sales" data-d="desc">Total Sales ↓</button>
+ <button class="btn" data-k="sales" data-d="asc">Total Sales ↑</button>
+ <button class="btn sp" data-k="spend" data-d="desc">Spend ↓</button>
+ <button class="btn sp" data-k="spend" data-d="asc">Spend ↑</button>
+ <button class="btn" data-k="alpha" data-d="asc">A–Z</button>
+</div>
+<table>
+<thead><tr><th>Category</th><th>Jan</th><th>Feb</th><th>Mar</th><th>Apr</th><th>May</th><th>Jun 1-20 <span class=part>·part</span></th><th>Total</th><th>Trend</th></tr></thead>
+<tbody id="tb"></tbody>
+</table>
+<div class="foot">
+<b>Reading the table —</b> top number is Total Sales, gold number below is Ad Spend, for that month. Cell brightness scales with sales size; trend line tracks the 6-period sales shape (green dot = up vs Jan, red = down). Rank number reflects the current sort.<br>
+<b>June is partial (1–20, 20 of 30 days)</b> — do not read the June dip as a decline; it covers two-thirds of the month.
+</div>
+</div>
+<script>
+const D={"months": ["Jan", "Feb", "Mar", "Apr", "May", "Jun 1-20"], "rows": [{"cat": "Safety", "sales": [291754.0, 294934.0, 378768.0, 392956.0, 441142.0, 271248.0], "spend": [34636.0, 35365.0, 52385.0, 61057.0, 60337.0, 46469.0], "tot_sales": 2070802.0, "tot_spend": 290249.0}, {"cat": "Parking", "sales": [312858.0, 295849.0, 351909.0, 333718.0, 352533.0, 275795.0], "spend": [32222.0, 30994.0, 43637.0, 44812.0, 49499.0, 40940.0], "tot_sales": 1922662.0, "tot_spend": 242104.0}, {"cat": "Security", "sales": [252317.0, 233342.0, 342381.0, 345582.0, 390009.0, 294557.0], "spend": [38600.0, 41609.0, 71489.0, 76588.0, 80544.0, 61689.0], "tot_sales": 1858188.0, "tot_spend": 370519.0}, {"cat": "Tags", "sales": [192014.0, 158631.0, 200411.0, 189426.0, 203417.0, 154647.0], "spend": [22980.0, 15844.0, 26974.0, 25158.0, 29160.0, 24658.0], "tot_sales": 1098546.0, "tot_spend": 144774.0}, {"cat": "Custom", "sales": [105795.0, 107868.0, 173724.0, 159439.0, 192487.0, 145436.0], "spend": [14043.0, 14481.0, 28475.0, 28600.0, 33203.0, 23859.0], "tot_sales": 884749.0, "tot_spend": 142661.0}, {"cat": "Traffic", "sales": [103825.0, 104144.0, 151783.0, 158073.0, 178238.0, 124099.0], "spend": [13518.0, 12341.0, 20821.0, 24514.0, 28274.0, 21925.0], "tot_sales": 820162.0, "tot_spend": 121393.0}, {"cat": "Permits", "sales": [77863.0, 79714.0, 94661.0, 95838.0, 87102.0, 72451.0], "spend": [8683.0, 7492.0, 11405.0, 11506.0, 13609.0, 12378.0], "tot_sales": 507629.0, "tot_spend": 65073.0}, {"cat": "Door", "sales": [70430.0, 74098.0, 100278.0, 96364.0, 93741.0, 62709.0], "spend": [10525.0, 11850.0, 19091.0, 17929.0, 18369.0, 14890.0], "tot_sales": 497620.0, "tot_spend": 92654.0}, {"cat": "Sidewalk", "sales": [51554.0, 41505.0, 86289.0, 78266.0, 100856.0, 80129.0], "spend": [10164.0, 7445.0, 13674.0, 12796.0, 14879.0, 13909.0], "tot_sales": 438599.0, "tot_spend": 72867.0}, {"cat": "Construction", "sales": [67379.0, 65850.0, 85731.0, 72259.0, 72203.0, 52679.0], "spend": [5687.0, 6081.0, 10074.0, 8014.0, 8560.0, 6775.0], "tot_sales": 416101.0, "tot_spend": 45191.0}, {"cat": "Posts", "sales": [43042.0, 59975.0, 80395.0, 67711.0, 77097.0, 59168.0], "spend": [5985.0, 5131.0, 10377.0, 12201.0, 12801.0, 10424.0], "tot_sales": 387388.0, "tot_spend": 56919.0}, {"cat": "DogPoop", "sales": [50073.0, 49169.0, 69916.0, 75489.0, 83717.0, 55272.0], "spend": [8348.0, 8642.0, 13047.0, 15670.0, 16992.0, 12477.0], "tot_sales": 383636.0, "tot_spend": 75176.0}, {"cat": "(blank)", "sales": [20098.0, 54434.0, 85464.0, 63646.0, 71783.0, 51515.0], "spend": [206.0, 7882.0, 10285.0, 9321.0, 10530.0, 7484.0], "tot_sales": 346940.0, "tot_spend": 45708.0}, {"cat": "Pool", "sales": [15015.0, 15379.0, 35468.0, 48272.0, 90611.0, 63655.0], "spend": [1828.0, 2312.0, 5178.0, 8245.0, 14508.0, 11307.0], "tot_sales": 268400.0, "tot_spend": 43378.0}, {"cat": "Restroom", "sales": [36252.0, 38027.0, 46146.0, 45483.0, 42594.0, 31513.0], "spend": [4913.0, 5254.0, 8864.0, 8269.0, 7683.0, 6349.0], "tot_sales": 240015.0, "tot_spend": 41332.0}, {"cat": "NoSmoking", "sales": [29249.0, 33220.0, 43195.0, 48665.0, 49395.0, 35441.0], "spend": [4115.0, 4754.0, 7895.0, 9658.0, 9378.0, 6952.0], "tot_sales": 239165.0, "tot_spend": 42752.0}, {"cat": "Warehouse", "sales": [32414.0, 27990.0, 40666.0, 48042.0, 31938.0, 26317.0], "spend": [5866.0, 3650.0, 9702.0, 9219.0, 7788.0, 6347.0], "tot_sales": 207367.0, "tot_spend": 42572.0}, {"cat": "AssetTag", "sales": [32430.0, 29131.0, 31754.0, 30167.0, 33388.0, 22769.0], "spend": [4358.0, 3164.0, 4069.0, 3952.0, 4217.0, 3540.0], "tot_sales": 179639.0, "tot_spend": 23300.0}, {"cat": "Bases", "sales": [29073.0, 25109.0, 33290.0, 23152.0, 31296.0, 20961.0], "spend": [1998.0, 1578.0, 1699.0, 1532.0, 1642.0, 2379.0], "tot_sales": 162881.0, "tot_spend": 10828.0}, {"cat": "ParkingStops", "sales": [32188.0, 12234.0, 24875.0, 20890.0, 29406.0, 15661.0], "spend": [5187.0, 3316.0, 5090.0, 4837.0, 4876.0, 2878.0], "tot_sales": 135254.0, "tot_spend": 26184.0}, {"cat": "HardHat", "sales": [19922.0, 18774.0, 20512.0, 19512.0, 22584.0, 14522.0], "spend": [2803.0, 2716.0, 3082.0, 2841.0, 2853.0, 2839.0], "tot_sales": 115826.0, "tot_spend": 17134.0}, {"cat": "Cones", "sales": [19251.0, 12864.0, 27546.0, 15465.0, 13709.0, 10803.0], "spend": [3223.0, 2592.0, 3294.0, 3489.0, 3112.0, 2719.0], "tot_sales": 99638.0, "tot_spend": 18429.0}, {"cat": "QCL", "sales": [16782.0, 12756.0, 17837.0, 17897.0, 16871.0, 15605.0], "spend": [1527.0, 934.0, 1566.0, 1915.0, 1653.0, 1844.0], "tot_sales": 97748.0, "tot_spend": 9439.0}, {"cat": "Campground", "sales": [7844.0, 7403.0, 10725.0, 9233.0, 12199.0, 9300.0], "spend": [1847.0, 1545.0, 2420.0, 2128.0, 2610.0, 2074.0], "tot_sales": 56704.0, "tot_spend": 12624.0}, {"cat": "N&L", "sales": [8016.0, 8757.0, 7080.0, 14171.0, 8982.0, 8769.0], "spend": [1268.0, 1186.0, 1902.0, 2406.0, 1618.0, 1352.0], "tot_sales": 55775.0, "tot_spend": 9732.0}, {"cat": "HH0WSID001", "sales": [0.0, 3739.0, 2107.0, 9381.0, 8112.0, 2719.0], "spend": [0.0, 579.0, 661.0, 703.0, 1115.0, 822.0], "tot_sales": 26058.0, "tot_spend": 3880.0}, {"cat": "Shipping", "sales": [3414.0, 1884.0, 3601.0, 3369.0, 3989.0, 1124.0], "spend": [332.0, 287.0, 508.0, 402.0, 608.0, 280.0], "tot_sales": 17381.0, "tot_spend": 2417.0}, {"cat": "Miscellaneous", "sales": [2499.0, 3370.0, 2461.0, 2387.0, 3316.0, 2312.0], "spend": [276.0, 271.0, 276.0, 452.0, 626.0, 370.0], "tot_sales": 16345.0, "tot_spend": 2271.0}, {"cat": "Tape", "sales": [169.0, 4198.0, 422.0, 1329.0, 553.0, 6357.0], "spend": [29.0, 6.0, 86.0, 125.0, 57.0, 24.0], "tot_sales": 13028.0, "tot_spend": 327.0}, {"cat": "Badges", "sales": [1941.0, 1799.0, 2278.0, 1410.0, 1146.0, 544.0], "spend": [3.0, 6.0, 63.0, 89.0, 81.0, 64.0], "tot_sales": 9118.0, "tot_spend": 306.0}, {"cat": "TabsStamps", "sales": [539.0, 183.0, 193.0, 21.0, 193.0, 63.0], "spend": [224.0, 144.0, 140.0, 158.0, 28.0, 4.0], "tot_sales": 1192.0, "tot_spend": 698.0}], "tot_sales": [1926000.0, 1876330.0, 2551866.0, 2487613.0, 2744607.0, 1988140.0], "tot_spend": [245394.0, 239451.0, 388229.0, 408586.0, 441210.0, 350021.0], "grand_sales": 13574556.0, "grand_spend": 2072891.0};
+const maxsale=Math.max(...D.rows.flatMap(r=>r.sales));
+function fs(v){v=Math.round(v);if(v>=1e6)return '$'+(v/1e6).toFixed(2)+'M';if(v>=1e3)return '$'+Math.round(v/1e3)+'k';return '$'+v.toLocaleString();}
+function fk(v){v=Math.round(v);if(v>=1e6)return '$'+(v/1e6).toFixed(2)+'M';if(v>=1e3)return '$'+(v/1e3).toFixed(1)+'k';return '$'+v.toLocaleString();}
+function heat(v){const t=Math.sqrt(v/maxsale||0);return `rgba(34,211,238,${(0.06+0.34*t).toFixed(3)})`;}
+function spark(vals){const w=70,h=22,mn=Math.min(...vals),mx=Math.max(...vals),rng=(mx-mn)||1;
+ const pts=vals.map((v,i)=>[i*(w/(vals.length-1)),h-2-((v-mn)/rng)*(h-4)]);
+ const poly=pts.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');const last=pts[pts.length-1];
+ const up=vals[vals.length-1]>=vals[0];
+ return `<svg width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><polyline points="${poly}" fill="none" stroke="#7dd3fc" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" opacity="0.9"/><circle cx="${last[0].toFixed(1)}" cy="${last[1].toFixed(1)}" r="2.1" fill="${up?'#a3e635':'#f87171'}"/></svg>`;}
+function render(key,dir){
+ let rs=[...D.rows];
+ if(key==='alpha') rs.sort((a,b)=>a.cat.localeCompare(b.cat));
+ else rs.sort((a,b)=>{const x=key==='spend'?a.tot_spend:a.tot_sales,y=key==='spend'?b.tot_spend:b.tot_sales;return dir==='asc'?x-y:y-x;});
+ let h='';
+ rs.forEach((r,idx)=>{
+  let cells='';
+  for(let m=0;m<6;m++) cells+=`<td style="background:${heat(r.sales[m])}"><div class="sale">${fs(r.sales[m])}</div><div class="sp">${fk(r.spend[m])}</div></td>`;
+  h+=`<tr><td class="cat"><span class="rank">${idx+1}</span>${r.cat}</td>${cells}<td class="tot"><div class="sale">${fs(r.tot_sales)}</div><div class="sp">${fk(r.tot_spend)}</div></td><td class="trend">${spark(r.sales)}</td></tr>`;
+ });
+ let tc='';for(let m=0;m<6;m++) tc+=`<td><div class="sale">${fs(D.tot_sales[m])}</div><div class="sp">${fk(D.tot_spend[m])}</div></td>`;
+ h+=`<tr class="grand"><td class="cat">TOTAL</td>${tc}<td class="tot"><div class="sale">${fs(D.grand_sales)}</div><div class="sp">${fk(D.grand_spend)}</div></td><td class="trend">${spark(D.tot_sales)}</td></tr>`;
+ document.getElementById('tb').innerHTML=h;
+}
+document.querySelectorAll('.btn').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.btn').forEach(x=>x.classList.remove('on'));
+ b.classList.add('on'); render(b.dataset.k,b.dataset.d);
+});
+render('sales','desc');
+</script>
+</body></html>
